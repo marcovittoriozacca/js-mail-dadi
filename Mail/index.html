@@ -8,7 +8,27 @@
     <link rel="stylesheet" href="./mail.css">
 </head>
 <body>
-    
+    <header>
+        <h1 class="text-center fw-bolder my-3 ">La tua email è presente nella lista?</h1>
+    </header>
+
+    <main>
+        <div class="d-flex justify-content-center">
+            <div class="bg-body-tertiary border border-3 p-5 rounded-4 mt-3">
+                <div class="d-flex flex-column row-gap-4 align-items-center ">
+                    <label for="email" class="fs-3 ">Inserisci la tua mail per saperlo</label>
+                    <input id="inputEmail" type="email" name="userEmail" id="email" class="w-75 p-1 text-center ">
+                    <button id="checkBtn" class="btn btn-primary p-2 ">Clicca per controllare</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-none">
+            <div class="d-flex justify-content-center fw-bolder fs-3">
+                <span id="result" class="text-light p-3 border border-2 mt-4"></span>
+            </div>
+        </div>
+    </main>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js' integrity='sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==' crossorigin='anonymous'></script>
     <script src="./mail.js"></script>
 </body>
