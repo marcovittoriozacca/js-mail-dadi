@@ -4,23 +4,47 @@ function randomNumGen(min, max){
 }
 
 
+
 const diceButton = document.getElementById('diceBtn');
+const userHtml = document.getElementById('user');
+const cpuHtml = document.getElementById('cpu');
+const resultHtml = document.getElementById('result');
+const displayChange = document.querySelector('.d-none');
+
+
 
 diceButton.addEventListener('click', function(){
-    console.clear();
-    let userDice = randomNumGen(1,6), cpuDice = randomNumGen(1,6);
-    console.log(`dado utente: ${userDice} - dado computer: ${cpuDice}`)
 
+    //reset classi del risultato
+    resultHtml.className = '';
+
+    //generazione valori dei dadi
+    let userDice = randomNumGen(1,6), cpuDice = randomNumGen(1,6), result;
+
+    //output nel DOM dei dadi
+    userHtml.innerHTML = userDice;
+    cpuHtml.innerHTML = cpuDice;
+    userHtml.classList.add('bg-body-tertiary', 'dice', 'rounded', 'border', 'border-2');
+    cpuHtml.classList.add('bg-body-tertiary', 'dice', 'rounded', 'border', 'border-2');
+
+    
     if (userDice > cpuDice){
-        console.log("vince l'utente!")
+        result = "Vince l'utente!";
+        resultHtml.classList.add('btn','bg-success','p-3', 'text-light');
+        
 
     }else if (userDice < cpuDice){
-        console.log("vince il computer!")
+        result = 'Vince la cpu!';
+        resultHtml.classList.add('btn','bg-danger','p-3', 'text-light');
 
     }else{
-        console.log("pareggio!")
-
+        result = 'Pareggio!';
+        resultHtml.classList.add('btn','bg-warning','p-3');
     }
+    //dadi e risultati vengono visualizzati nel DOM
+    displayChange.classList.replace('d-none','d-block')
+    resultHtml.innerHTML = result;
+    
 })
 
 

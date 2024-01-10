@@ -13,8 +13,28 @@
     </header>
 
     <main>
-        <div id="diceBtn" class="d-flex justify-content-center my-5">
-            <button class="btn btn-primary">Clicca per lanciare il dado!</button>
+        <!-- bottone che lancia i dadi -->
+        <div class="d-flex justify-content-center py-4">
+            <button id="diceBtn" class="btn btn-primary">Clicca per lanciare il dado!</button>
+        </div>
+
+        <!-- sezione dei dadi e del risultato inizialmente in d-none, al click diventerà visibile (d-block) -->
+        <div class="d-none">
+            <!-- I due dadi contenenti i numeri generati randomicamente tramite JS -->
+            <div class="d-flex justify-content-center column-gap-5 ">
+                <div class="d-flex flex-column align-items-center row-gap-2">
+                    <span>User</span>
+                    <span id="user" class="p-4 bg-body-tertiary border border-2 rounded-1"></span>
+                </div>
+                <div class="d-flex flex-column align-items-center row-gap-2">
+                    <span>CPU</span>
+                    <span id="cpu" class="p-4 bg-body-tertiary border border-2 rounded-1"></span>
+                </div>
+            </div>
+            <!-- Risultato -->
+            <div class="d-flex justify-content-center mt-5 ">
+                <div id="result"></div>
+            </div>
         </div>
     </main>
 
